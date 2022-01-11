@@ -34,26 +34,45 @@ namespace practice_1_계산기
         {
             Button numBtn = (Button)sender;
             int number = Convert.ToInt16(numBtn.Text);//입력한 숫자
-            
+
+            textBox1.AppendText(number.ToString());
             //첫번째 수가 아무것도 입력되지 않았을 때
-            if(setNumber1 == 0)
+            if (setNumber1 == 0)
             {
 
             }
 
-            MessageBox.Show(number + "버튼을 누르셨어요");
+            //MessageBox.Show(number + "버튼을 누르셨어요");
         }
 
+        // 연산 버튼 클릭시 발생하는 이벤트
         private void operBtnClick(object sender, EventArgs e)
         {
             Button operBtn = (Button)sender;
 
-            if(!double.IsNaN(setNumber2))
+            if(!double.IsNaN(setNumber2)) //?
             {
-                Calculate();
-                setNumber1 = result;
-                set
+                
             }
+        }
+        private void equaBtnClick(object sender, EventArgs e)
+        {
+            Button operBtn = (Button)sender;
+
+
+            MessageBox.Show(textBox1.Text.ToString());
+        }
+
+        //초기화 버튼
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+        }
+
+        //한개 지우기 버튼
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.ClearUndo();
         }
     }
 }

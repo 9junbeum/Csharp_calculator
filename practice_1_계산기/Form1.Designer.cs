@@ -49,24 +49,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 74);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(59, 56);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "지우기";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(77, 74);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(59, 56);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "초기화";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -77,6 +59,26 @@
             this.button3.Text = "/";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.operBtnClick);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 74);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(59, 56);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "지우기";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(77, 74);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(59, 56);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "초기화";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button4
             // 
@@ -219,7 +221,7 @@
             this.button16.TabIndex = 17;
             this.button16.Text = "0";
             this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.numBtnClick);
+            this.button16.Click += new System.EventHandler(this.equaBtnClick);
             // 
             // button17
             // 
@@ -275,7 +277,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "계산기";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
