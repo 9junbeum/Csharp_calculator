@@ -47,12 +47,13 @@
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.Location = new System.Drawing.Point(142, 74);
+            this.button3.Location = new System.Drawing.Point(142, 108);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(59, 56);
             this.button3.TabIndex = 2;
@@ -62,7 +63,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 74);
+            this.button1.Location = new System.Drawing.Point(12, 108);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(59, 56);
             this.button1.TabIndex = 3;
@@ -72,7 +73,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(77, 74);
+            this.button2.Location = new System.Drawing.Point(77, 108);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(59, 56);
             this.button2.TabIndex = 4;
@@ -83,7 +84,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.Location = new System.Drawing.Point(207, 74);
+            this.button4.Location = new System.Drawing.Point(207, 108);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(59, 56);
             this.button4.TabIndex = 5;
@@ -94,7 +95,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("굴림", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button5.Location = new System.Drawing.Point(12, 136);
+            this.button5.Location = new System.Drawing.Point(12, 170);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(59, 56);
             this.button5.TabIndex = 6;
@@ -105,7 +106,7 @@
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("굴림", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button6.Location = new System.Drawing.Point(77, 136);
+            this.button6.Location = new System.Drawing.Point(77, 170);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(59, 56);
             this.button6.TabIndex = 7;
@@ -116,7 +117,7 @@
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("굴림", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button7.Location = new System.Drawing.Point(142, 136);
+            this.button7.Location = new System.Drawing.Point(142, 170);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(59, 56);
             this.button7.TabIndex = 8;
@@ -127,7 +128,7 @@
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button8.Location = new System.Drawing.Point(207, 136);
+            this.button8.Location = new System.Drawing.Point(207, 170);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(59, 56);
             this.button8.TabIndex = 9;
@@ -138,7 +139,7 @@
             // button9
             // 
             this.button9.Font = new System.Drawing.Font("굴림", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button9.Location = new System.Drawing.Point(12, 198);
+            this.button9.Location = new System.Drawing.Point(12, 232);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(59, 56);
             this.button9.TabIndex = 10;
@@ -149,7 +150,7 @@
             // button10
             // 
             this.button10.Font = new System.Drawing.Font("굴림", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button10.Location = new System.Drawing.Point(77, 198);
+            this.button10.Location = new System.Drawing.Point(77, 232);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(59, 56);
             this.button10.TabIndex = 11;
@@ -160,7 +161,7 @@
             // button11
             // 
             this.button11.Font = new System.Drawing.Font("굴림", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button11.Location = new System.Drawing.Point(142, 198);
+            this.button11.Location = new System.Drawing.Point(142, 232);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(59, 56);
             this.button11.TabIndex = 12;
@@ -171,7 +172,7 @@
             // button12
             // 
             this.button12.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button12.Location = new System.Drawing.Point(208, 198);
+            this.button12.Location = new System.Drawing.Point(208, 232);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(59, 118);
             this.button12.TabIndex = 13;
@@ -182,7 +183,7 @@
             // button13
             // 
             this.button13.Font = new System.Drawing.Font("굴림", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button13.Location = new System.Drawing.Point(12, 260);
+            this.button13.Location = new System.Drawing.Point(12, 294);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(59, 56);
             this.button13.TabIndex = 14;
@@ -193,7 +194,7 @@
             // button14
             // 
             this.button14.Font = new System.Drawing.Font("굴림", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button14.Location = new System.Drawing.Point(77, 260);
+            this.button14.Location = new System.Drawing.Point(77, 294);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(59, 56);
             this.button14.TabIndex = 15;
@@ -204,7 +205,7 @@
             // button15
             // 
             this.button15.Font = new System.Drawing.Font("굴림", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button15.Location = new System.Drawing.Point(142, 260);
+            this.button15.Location = new System.Drawing.Point(142, 294);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(59, 56);
             this.button15.TabIndex = 16;
@@ -215,48 +216,66 @@
             // button16
             // 
             this.button16.Font = new System.Drawing.Font("굴림", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button16.Location = new System.Drawing.Point(12, 322);
+            this.button16.Location = new System.Drawing.Point(12, 356);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(124, 56);
             this.button16.TabIndex = 17;
             this.button16.Text = "0";
             this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.equaBtnClick);
+            this.button16.Click += new System.EventHandler(this.numBtnClick);
             // 
             // button17
             // 
             this.button17.Font = new System.Drawing.Font("굴림", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button17.Location = new System.Drawing.Point(142, 322);
+            this.button17.Location = new System.Drawing.Point(142, 356);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(59, 56);
             this.button17.TabIndex = 18;
             this.button17.Text = ".";
             this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.operBtnClick);
             // 
             // button18
             // 
             this.button18.Font = new System.Drawing.Font("굴림", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button18.Location = new System.Drawing.Point(207, 322);
+            this.button18.Location = new System.Drawing.Point(207, 356);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(59, 56);
             this.button18.TabIndex = 19;
             this.button18.Text = "=";
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.equaBtnClick);
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("굴림", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(12, 17);
+            this.textBox1.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(255, 51);
+            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBox1.Size = new System.Drawing.Size(255, 28);
             this.textBox1.TabIndex = 21;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("굴림", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox2.Location = new System.Drawing.Point(12, 46);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBox2.Size = new System.Drawing.Size(254, 56);
+            this.textBox2.TabIndex = 22;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(279, 393);
+            this.ClientSize = new System.Drawing.Size(279, 422);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button18);
             this.Controls.Add(this.button17);
@@ -305,6 +324,7 @@
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 
