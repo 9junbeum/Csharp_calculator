@@ -12,12 +12,12 @@ namespace practice_1_계산기
 {
     public partial class Form1 : Form
     {
-        //결과값 전역변수 선언
-        float result = 0;
-        float setNumber1 = 0;
-        float setNumber2 = 0;
-        string oper = "";
-        int index_of_oper = 0;
+        float result = 0.0f;
+        float num1 = 0.0f;        //저장된 숫자
+        float num2 = 0.0f;        //새로 입력받은 숫자
+        string oper = "";         //입력받은 연산자
+        int oper_count = 0;       //연산자 개수
+        int[] index_of_oper;
 
         public Form1()
         {
@@ -34,10 +34,7 @@ namespace practice_1_계산기
         {
             Button numBtn = (Button)sender;
 
-            if(oper == "")
-            {
-                index_of_oper++;
-            }
+            //첫번 째 textbox에 보여준다.
             textBox1.AppendText(numBtn.Text);
         }
 
@@ -45,34 +42,50 @@ namespace practice_1_계산기
         private void operBtnClick(object sender, EventArgs e)
         {
             Button operBtn = (Button)sender;
-            oper = operBtn.Text;//입력한 연산자
-            setNumber1 = Convert.ToSingle(textBox1.Text);
-            index_of_oper++;
-            textBox1.AppendText(oper.ToString());
+
+            //index를 저장.
+            index_of_oper[oper_count] = textBox1.TextLength;
+            oper_count++;
+            textBox1.AppendText(operBtn.Text.ToString());
         }
 
         
         private void equaBtnClick(object sender, EventArgs e)
         {
             Button equaBtn = (Button)sender;
+            string s = textBox1.Text;
 
-            string v = textBox1.Text;
-            v = v.Substring(index_of_oper, v.Length - index_of_oper);
-            setNumber2 = Convert.ToSingle(v);
+            if(index_of_oper == null)
+            {
+                MessageBox.Show("연산자가 없습니다.");
+            }
+            else if(textBox1 == null)
+            {
+                MessageBox.Show("아무것도 입력되지 않았습니다.");
+            }
+
+            //parsing
+            for(int i = 0;i<textBox1.TextLength ;i++)
+            {
+                textBox1.GetFirstCharIndexFromLine(i);
+            }
+
+
+
 
             switch (oper)
             {
                 case "+":
-                    result = setNumber1 + setNumber2;
+                    result = num1 + num2;
                     break;
                 case "-":
-                    result = setNumber1 - setNumber2;
+                    result = num1 - num2;
                     break;
                 case "*":
-                    result = setNumber1 * setNumber2;
+                    result = num1 * num2;
                     break;
                 case "/":
-                    result = setNumber1 / setNumber2;
+                    result = num1 / num2;
                     break;
                 default:
                     MessageBox.Show("연산자가 잘못 되었 습니다.");
@@ -80,23 +93,32 @@ namespace practice_1_계산기
             }
             textBox2.Clear();
             textBox2.AppendText(result.ToString());
+            setNumber1 =  Convert.ToSingle(textBox2.Text);
         }
 
         //초기화 버튼
-        private void button2_Click(object sender, EventArgs e)
+        private void Clear_Click(object sender, EventArgs e)
         {
             textBox1.Clear();
             textBox2.Clear();
             result = 0;
-            setNumber1 = 0;
-            setNumber2 = 0;
+            num1 = 0;
+            num2 = 0;
             oper = "";
-            index_of_oper = 0;
+            oper_count = 0;
+            index_of_oper = null; 
         }
 
         //한개 지우기 버튼
-        private void button1_Click(object sender, EventArgs e)
+        private void erase_Click(object sender, EventArgs e)
         {
+            //지우려고 하는 것이 연산자이면,
+            if(index_of_oper.Contains(textBox1.TextLength - 1))
+            {
+                index_of_oper[--oper_count] = 0;
+            }
+
+            //textbox 관리
             string s = textBox1.Text;
             if(s.Length > 1)
             {
@@ -106,7 +128,6 @@ namespace practice_1_계산기
             {
                 s = "";
             }
-
             textBox1.Text = s;
         }
 
