@@ -54,6 +54,7 @@ namespace practice_1_계산기
         {
             Button equaBtn = (Button)sender;
             string s = textBox1.Text;
+            string sub = "";
 
             if(index_of_oper == null)
             {
@@ -67,12 +68,27 @@ namespace practice_1_계산기
             //parsing
             for(int i = 0;i<textBox1.TextLength ;i++)
             {
-                textBox1.GetFirstCharIndexFromLine(i);
+                //문자열이면
+                if(index_of_oper.Contains(i))
+                {
+                    if(num1 == 0)
+                    {
+                        num1 = Convert.ToSingle(sub);
+                    }
+                    else
+                    {
+                        num2 = Convert.ToSingle(sub);
+                        
+                    }
+                    sub = "";
+                }
+                else
+                {
+                    sub.Append(s[i]);
+                }
             }
 
-
-
-
+            
             switch (oper)
             {
                 case "+":
