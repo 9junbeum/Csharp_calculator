@@ -233,7 +233,7 @@
             this.button17.TabIndex = 18;
             this.button17.Text = ".";
             this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.operBtnClick);
+            this.button17.Click += new System.EventHandler(this.numBtnClick);
             // 
             // button18
             // 

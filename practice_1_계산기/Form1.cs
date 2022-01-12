@@ -15,9 +15,9 @@ namespace practice_1_계산기
         //결과값 전역변수 선언
         float result = 0;
         float setNumber1 = 0;
-        float setNumber2 = 10;
-        string oper;
-
+        float setNumber2 = 0;
+        string oper = "";
+        int index_of_oper = 0;
 
         public Form1()
         {
@@ -33,10 +33,12 @@ namespace practice_1_계산기
         private void numBtnClick(object sender, EventArgs e)
         {
             Button numBtn = (Button)sender;
-            int number = Convert.ToInt16(numBtn.Text);//입력한 숫자
-             
-            textBox1.AppendText(number.ToString());
 
+            if(oper == "")
+            {
+                index_of_oper++;
+            }
+            textBox1.AppendText(numBtn.Text);
         }
 
         // 연산 버튼 클릭시 발생하는 이벤트
@@ -44,21 +46,21 @@ namespace practice_1_계산기
         {
             Button operBtn = (Button)sender;
             oper = operBtn.Text;//입력한 연산자
-            //첫번째 숫자가 없을 때 추가 
-            if (setNumber1 == 0)
-            {
-                setNumber1 = float.Parse(textBox1.Text);
-            }
+            setNumber1 = Convert.ToSingle(textBox1.Text);
+            index_of_oper++;
             textBox1.AppendText(oper.ToString());
         }
 
         
         private void equaBtnClick(object sender, EventArgs e)
         {
-            Button operBtn = (Button)sender;
-            string text1_string = textBox1.Text;
+            Button equaBtn = (Button)sender;
 
-            switch(oper)
+            string v = textBox1.Text;
+            v = v.Substring(index_of_oper, v.Length - index_of_oper);
+            setNumber2 = Convert.ToSingle(v);
+
+            switch (oper)
             {
                 case "+":
                     result = setNumber1 + setNumber2;
@@ -73,7 +75,7 @@ namespace practice_1_계산기
                     result = setNumber1 / setNumber2;
                     break;
                 default:
-                    MessageBox.Show("연산자가 입력되지 않았습니다.");
+                    MessageBox.Show("연산자가 잘못 되었 습니다.");
                     break;
             }
             textBox2.Clear();
@@ -89,6 +91,7 @@ namespace practice_1_계산기
             setNumber1 = 0;
             setNumber2 = 0;
             oper = "";
+            index_of_oper = 0;
         }
 
         //한개 지우기 버튼
