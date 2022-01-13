@@ -12,12 +12,14 @@ namespace practice_1_계산기
 {
     public partial class Form1 : Form
     {
-        float result = 0.0f;
+        float result = 0.0f;      //결과값
         float num1 = 0.0f;        //저장된 숫자
         float num2 = 0.0f;        //새로 입력받은 숫자
         string oper = "";         //입력받은 연산자
         int oper_count = 0;       //연산자 개수
-        int[] index_of_oper;
+        int[] index_of_oper = new int[10];
+        float[] num_arr = new float[10];
+        string[] oper_arr = new string[10];
 
         public Form1()
         {
@@ -34,7 +36,7 @@ namespace practice_1_계산기
         {
             Button numBtn = (Button)sender;
 
-            //첫번 째 textbox에 보여준다.
+            //textbox에 보여준다.
             textBox1.AppendText(numBtn.Text);
         }
 
@@ -43,73 +45,20 @@ namespace practice_1_계산기
         {
             Button operBtn = (Button)sender;
 
-            //index를 저장.
+            //연산자의 index를 저장한다.(연산자가 입력되기 전의 textbox의 길이
             index_of_oper[oper_count] = textBox1.TextLength;
+            //textbox에 보여준다.(숫자와 동일)
+            textBox1.AppendText(operBtn.Text);
+            //연산자의 개수를 세기 위해 count++ 한다.
             oper_count++;
-            textBox1.AppendText(operBtn.Text.ToString());
         }
 
         
         private void equaBtnClick(object sender, EventArgs e)
         {
             Button equaBtn = (Button)sender;
-            string s = textBox1.Text;
-            string sub = "";
 
-            if(index_of_oper == null)
-            {
-                MessageBox.Show("연산자가 없습니다.");
-            }
-            else if(textBox1 == null)
-            {
-                MessageBox.Show("아무것도 입력되지 않았습니다.");
-            }
 
-            //parsing
-            for(int i = 0;i<textBox1.TextLength ;i++)
-            {
-                //문자열이면
-                if(index_of_oper.Contains(i))
-                {
-                    if(num1 == 0)
-                    {
-                        num1 = Convert.ToSingle(sub);
-                    }
-                    else
-                    {
-                        num2 = Convert.ToSingle(sub);
-                        
-                    }
-                    sub = "";
-                }
-                else
-                {
-                    sub.Append(s[i]);
-                }
-            }
-
-            
-            switch (oper)
-            {
-                case "+":
-                    result = num1 + num2;
-                    break;
-                case "-":
-                    result = num1 - num2;
-                    break;
-                case "*":
-                    result = num1 * num2;
-                    break;
-                case "/":
-                    result = num1 / num2;
-                    break;
-                default:
-                    MessageBox.Show("연산자가 잘못 되었 습니다.");
-                    break;
-            }
-            textBox2.Clear();
-            textBox2.AppendText(result.ToString());
-            setNumber1 =  Convert.ToSingle(textBox2.Text);
         }
 
         //초기화 버튼
@@ -128,10 +77,10 @@ namespace practice_1_계산기
         //한개 지우기 버튼
         private void erase_Click(object sender, EventArgs e)
         {
-            //지우려고 하는 것이 연산자이면,
+            //지우려고 하는 것이 연산자이면, oper_count 한개 낮춰주고 해당 인덱스에 \0 넣음
             if(index_of_oper.Contains(textBox1.TextLength - 1))
             {
-                index_of_oper[--oper_count] = 0;
+                index_of_oper[--oper_count] = '\0';
             }
 
             //textbox 관리
@@ -147,14 +96,5 @@ namespace practice_1_계산기
             textBox1.Text = s;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
