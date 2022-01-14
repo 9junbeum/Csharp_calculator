@@ -79,6 +79,7 @@ namespace practice_1_계산기
                     catch (Exception)
                     {
                         MessageBox.Show("잘못된 문자열 입니다.");
+                        break;
                     }
                     sub = "";
                     num_count++;
@@ -95,7 +96,7 @@ namespace practice_1_계산기
             num_arr[num_count] = Convert.ToSingle(sub);
 
             //calculate
-            for (int j = 0;j < index_count ;j++)
+            for (int j = 0;j <= index_count ;j++)
             {
                 //아직 연산 안했으면
                 if(num1 == 0)
@@ -140,7 +141,15 @@ namespace practice_1_계산기
             result = 0;
             num1 = 0;
             num2 = 0;
-            index_count = 0;
+            //count도 초기화
+            index_count = 0;       //연산자 개수
+            oper_count = 0;
+            num_count = 0;       //숫자 개수
+            //배열도 다시 초기화
+            index_of_oper = new int[100]; //연산자가 들어있는 index 포함하는 배열
+            num_arr = new float[100];   //실수의 문자열
+            oper_arr = new string[100];//연산자의 문자열
+
         }
 
         //한개 지우기 버튼
