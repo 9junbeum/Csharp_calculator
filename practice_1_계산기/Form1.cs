@@ -60,6 +60,9 @@ namespace practice_1_계산기
         {
             //임시로 저장하는 sub 
             string sub = "";
+            oper_count = 0;
+            num_count = 0;
+            
 
             Button equaBtn = (Button)sender;
             //계산전 최종 문자열을 s에 저장한다.
@@ -93,7 +96,14 @@ namespace practice_1_계산기
                 }
             }
             //마지막 ^^
-            num_arr[num_count] = Convert.ToSingle(sub);
+            try
+            {
+                num_arr[num_count] = Convert.ToSingle(sub);
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("잘못된 문자열 입니다.");
+            }
 
             //calculate
             for (int j = 0;j <= index_count ;j++)
@@ -127,6 +137,7 @@ namespace practice_1_계산기
                 }
             }
             result = num1;
+            num1 = 0;
             textBox2.Clear();
             textBox2.AppendText(result.ToString());
         }
