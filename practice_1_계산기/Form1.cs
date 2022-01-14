@@ -15,6 +15,7 @@ namespace practice_1_계산기
         float result = 0.0f;      //결과값
         float num1 = 0.0f;        //저장된 숫자
         float num2 = 0.0f;        //새로 입력받은 숫자
+        Boolean is_calc = false;
 
         int[] index_of_oper = new int[100]; //연산자가 들어있는 index 포함하는 배열
         int index_count = 0;       //연산자 개수
@@ -109,9 +110,10 @@ namespace practice_1_계산기
             for (int j = 0;j <= index_count ;j++)
             {
                 //아직 연산 안했으면
-                if(num1 == 0)
+                if(is_calc == false)
                 {
                     num1 = num_arr[j];
+                    is_calc = true;
                 }
                 else
                 {
@@ -138,6 +140,7 @@ namespace practice_1_계산기
             }
             result = num1;
             num1 = 0;
+            is_calc = false;
             textBox2.Clear();
             textBox2.AppendText(result.ToString());
         }
@@ -160,20 +163,22 @@ namespace practice_1_계산기
             index_of_oper = new int[100]; //연산자가 들어있는 index 포함하는 배열
             num_arr = new float[100];   //실수의 문자열
             oper_arr = new string[100];//연산자의 문자열
+            is_calc = false;
 
         }
 
         //한개 지우기 버튼
         private void erase_Click(object sender, EventArgs e)
         {
+            string s = textBox1.Text;
+
             //지우려고 하는 것이 연산자이면, oper_count 한개 낮춰주고 해당 인덱스에 \0 넣음
-            if(index_of_oper.Contains(textBox1.TextLength - 1))
+            if (index_of_oper.Contains(textBox1.TextLength - 1)&&(textBox1.TextLength != 1))
             {
                 index_of_oper[--index_count] = '\0';
             }
 
             //textbox 관리
-            string s = textBox1.Text;
             if(s.Length > 1)
             {
                 s = s.Substring(0, s.Length - 1);
