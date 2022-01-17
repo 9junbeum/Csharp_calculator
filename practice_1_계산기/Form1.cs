@@ -16,6 +16,7 @@ namespace practice_1_계산기
         float num1 = 0.0f;        //저장된 숫자
         float num2 = 0.0f;        //새로 입력받은 숫자
         Boolean is_calc = false;
+        Boolean is_oper_char = false;
 
         int[] index_of_oper = new int[100]; //연산자가 들어있는 index 포함하는 배열
         int index_count = 0;       //연산자 개수
@@ -38,7 +39,7 @@ namespace practice_1_계산기
         private void numBtnClick(object sender, EventArgs e)
         {
             Button numBtn = (Button)sender;
-
+            is_oper_char = false;
             //textbox에 보여준다.
             textBox1.AppendText(numBtn.Text);
         }
@@ -47,13 +48,24 @@ namespace practice_1_계산기
         private void operBtnClick(object sender, EventArgs e)
         {
             Button operBtn = (Button)sender;
-
+            
+            //음수 연산자이면, 해당 처리
+            if (operBtn.Text == "-")
+            {
+                if(is_oper_char == true)
+                {
+                    textBox1.AppendText(operBtn.Text);
+                    is_oper_char = true;
+                    return;
+                }
+            }
             //연산자의 index를 저장한다.(연산자가 입력되기 전의 textbox의 길이
             index_of_oper[index_count] = textBox1.TextLength;
             //textbox에 보여준다.(숫자와 동일)
             textBox1.AppendText(operBtn.Text);
             //연산자의 개수를 세기 위해 count++ 한다.
             index_count++;
+            is_oper_char = true;
         }
 
         
@@ -73,6 +85,7 @@ namespace practice_1_계산기
             for (int i = 0;i <s.Length;i++)
             {
                 string c = s.Substring(i,1);
+
                 if (index_of_oper.Contains(i)&&i!=0)
                 {
                     //새로운 실수 모양의 문자열을 새로운 배열에 저장해야한다.
@@ -160,6 +173,7 @@ namespace practice_1_계산기
             oper_count = 0;
             num_count = 0;       //숫자 개수
             //배열도 다시 초기화
+            
             index_of_oper = new int[100]; //연산자가 들어있는 index 포함하는 배열
             num_arr = new float[100];   //실수의 문자열
             oper_arr = new string[100];//연산자의 문자열
