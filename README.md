@@ -1,7 +1,7 @@
 
 # 소개
 
-진명아이앤씨 입사후 처음으로 작성하는 C# 그리고 windows form 활용한 계산기 예제입니다. 
+C#을 활용한 계산기 예제입니다. 
 
 # 디자인
 ![image](https://user-images.githubusercontent.com/72683432/149472665-ca8be0ad-5dc9-4bfc-bd47-814a8aa4daf8.png)
